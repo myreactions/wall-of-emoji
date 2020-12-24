@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Change default document font size to 10px for easy rem calculations */
+  font-size: 62.5%;
+  font-family: serif;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+header {
+  width: calc(100% - 5rem);
+  cursor: pointer;
+  text-align: center;
+  margin: 4rem auto;
+  margin-bottom: 8rem;
+  border-radius: 3px;
+  padding: 5rem 0;
+  background: white;
+  color: black;
+  transition: background 0.5s, color 0.5s, border-radius 0.5s, box-shadow 0.5s;
+}
+
+header:hover {
+  box-shadow: 0 0 100px 10px purple;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+@keyframes fadeInH1 {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInH2 {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes hideHiddenH2 {
+  from { opacity: 0; }
+  to { opacity: 0; }
+}
+
+header > h1 {
+  /* font-family: 'Bungee Shade', cursive; */
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: bold;
+  font-size: 8rem;
+  padding: 1rem 0;
+  animation: fadeInH1 2s ease-in-out;
+}
+
+header > h2 {
+  /* font-family: 'Major Mono Display', monospace;
+  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Architects Daughter', cursive; */
+  font-family: 'Poiret One', cursive;
+  font-style: italic;
+  font-size: 2.4rem;
+  padding-top: 2rem;
+  animation: fadeInH2 4s;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in 0.5s;
+}
+
+.hidden {
+  position: relative;
+  top: -4.4rem;
+  opacity: 0;
+  animation: hideHiddenH2 4s;
+  transition: opacity 0.5s ease;
+}
+
+header:hover .visible {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+header:hover .hidden {
+  opacity: 1;
+  transition: opacity 0.5s ease-in 0.5s;
+}
+
+.buttons-wrapper {
+  display: none;
+  background: rgba(0, 249, 25, 0);
+  height: 70px;
+  width: 130px;
+  border-radius: 3px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.button {
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.button:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+#mode-btn {
+  background: rgb(0, 20, 74);
+  position: fixed;
+  right: 70px;
+  bottom: 10px;
+  z-index: 5;
+}
+
+#up-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 5;
+}
+
+.copied {
+  display: none;
+  background: white;
+  font-size: 2.4rem;
+  font-family: 'Poiret One', cursive;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1rem;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: 12rem;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+/* @keyframes fadeOut {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+} */
+
+.symbols-container {
+  background: linear-gradient(0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 0, 0, .3) 12.5%,
+    rgba(255, 165, 0, .3) 25%,
+    rgba(255, 255, 0, .3) 37.5%,
+    rgba(0, 128, 0, .3) 50%,
+    rgba(0, 0, 255, .3) 62.5%,
+    rgba(75, 0, 130, .3) 75%,
+    rgba(238, 130, 238, .3) 87.5%,
+    rgba(255, 255, 255, 0) 100%);
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.symbol {
+  font-size: 8rem;
+  height: 12rem;
+  width: auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  color: white;
+  transition: color 0.5s;
+}
+
+.symbol:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 35%;
+  }
+}
